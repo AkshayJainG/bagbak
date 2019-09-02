@@ -1,0 +1,20 @@
+{
+  "name": "frida-ipa-dump-agent",
+  "version": "0.1.0",
+  "description": "frida agent for dumping ipa",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "frida-compile src/index.ts -o dist.js",
+    "watch": "frida-compile src/index.ts -o dist.js -w"
+  },
+  "devDependencies": {
+    "@types/frida-gum": "^14.1.0",
+    "@types/node": "^12.7.2",
+    "frida-compile": "^9.0.8"
+  },
+  "dependencies": {
+    "macho": "^1.4.0"
+  }
+}

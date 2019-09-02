@@ -182,6 +182,7 @@ class IPADump(object):
         for identifier in self.plugins:
             pid = self.script.exports.launch(identifier)
             print('plugin %s, pid=%d' % (identifier, pid))
+            pkd_script.exports.jetsam(pid)
             session = self.device.attach(pid)
             script = session.create_script(self.agent_source)
             script.set_log_handler(on_console)
